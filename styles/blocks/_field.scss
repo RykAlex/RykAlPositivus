@@ -1,0 +1,85 @@
+.field {
+	--feildInputHeight: var(--input-height);
+	--feildInputTextColor: var(--color-dark);
+	--feildInputBgColor: var(--color-light);
+	--feildInputBorderColor: var(--color-dark);
+	--feildInputPlaceHolderColor: var(--color-gray-alt);
+	--feildInputHoverBgColor: var(--color-accent);
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 5px;
+
+	@include mobile {
+		row-gap: 10px;
+	}
+
+	&--big-height {
+		--feildInputHeight: var(--button-height);
+	}
+
+	&--dark-bg {
+		--feildInputTextColor: var(--color-accent);
+		--feildInputBgColor: var(--color-dark-alt);
+		--feildInputBorderColor: var(--color-light);
+		--feildInputPlaceHolderColor: var(--color-light);
+		--feildInputHoverBgColor: var(--color-dark);
+	}
+
+	&__label {
+		@include fluid-text(16, 14);
+	}
+
+	&__input {
+		width: 100%;
+		height: var(--feildInputHeight);
+		padding-inline: 30px;
+		color: var(--feildInputTextColor);
+		background-color: var(--feildInputBgColor);
+		border: 1px solid var(--feildInputBorderColor);
+		border-radius: var(--border-radius);
+
+		@include hover {
+			background-color: var(--feildInputHoverBgColor);
+		}
+
+		@include mobile {
+			padding-inline: 20px;
+		}
+
+		&:focus {
+			border-color: var(--color-accent);
+			outline: none;
+		}
+
+		&::-webkit-input-placeholder {
+			color: var(--feildInputPlaceHolderColor);
+		}
+
+		&::-moz-placeholder {
+			color: var(--feildInputPlaceHolderColor);
+		}
+
+		&:-ms-input-placeholder {
+			color: var(--feildInputPlaceHolderColor);
+		}
+
+		&::-ms-input-placeholder {
+			color: var(--feildInputPlaceHolderColor);
+		}
+
+		&::placeholder {
+			color: var(--feildInputPlaceHolderColor);
+		}
+		&--textarea {
+			height: 190px;
+			padding-block: 18px;
+			resize: none;
+
+			@include mobile {
+				height: 132px;
+			}
+		}
+	}
+}
